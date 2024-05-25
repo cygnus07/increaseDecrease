@@ -5,10 +5,21 @@ function App() {
   const [counter, setCounter] = useState(10);
 
   const increaseValue = () => {
-    if(counter<20)
-    setCounter(counter+1);
-    // console.log(counter);
-  }
+    // if(counter<20)
+
+    // react passes these changes in batches so even if i write it multiple times
+    // it will only update the value once
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+    // setCounter(counter+1);
+
+    // in order to change the value everytime
+    setCounter((prevCounter) => prevCounter+1 )
+    setCounter((prevCounter) => prevCounter+1 )
+    setCounter((prevCounter) => prevCounter+1 )
+    setCounter((prevCounter) => prevCounter+1 )
+    }
 
   const decreaseValue = () => {
     if(counter>0)
